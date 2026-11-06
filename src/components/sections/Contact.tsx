@@ -13,30 +13,7 @@ export default function Contact() {
           Based in {profile.location}
         </p>
       </Reveal>
-      <Reveal>
-        <a
-          href={compose}
-          target="_blank"
-          rel="noreferrer"
-          className="focus-ring break-all text-3xl font-medium tracking-tight underline decoration-signal decoration-2 underline-offset-8 transition-opacity duration-200 hover:opacity-80 sm:text-5xl"
-        >
-          {profile.email}
-        </a>
-        <p className="mt-6">
-          <a
-            href={`tel:+1${profile.phone.replace(/\D/g, "")}`}
-            className="focus-ring text-xl font-medium tracking-tight underline decoration-signal decoration-2 underline-offset-8 transition-opacity duration-200 hover:opacity-80 sm:text-2xl"
-          >
-            {profile.phone}
-          </a>
-        </p>
-        <div className="mt-2 space-y-1 font-mono text-sm text-muted">
-          {profile.phoneHours.map((line) => (
-            <p key={line}>{line}</p>
-          ))}
-        </div>
-      </Reveal>
-      <Reveal delay={100} className="mt-10 flex flex-wrap gap-3">
+      <Reveal className="flex flex-wrap gap-3">
         <a
           href={compose}
           target="_blank"

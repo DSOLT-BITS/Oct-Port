@@ -3,8 +3,6 @@ export const profile = {
   role: "Web Developer & IT Specialist",
   location: "Cleveland, Ohio",
   email: "David.solt@gmail.com",
-  phone: "440-610-7584",
-  phoneHours: ["Calls Monday–Friday, 9am–6pm", "Texts anytime", "Email anytime"],
   resume: "/David-Solt-Resume.pdf",
   references: "/David-Solt-References.pdf",
   summary:
