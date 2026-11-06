@@ -1,9 +1,12 @@
 export const profile = {
   name: "David Solt",
   role: "Web Developer & IT Specialist",
-  location: "LaGrange, Ohio",
+  location: "Cleveland, Ohio",
   email: "David.solt@gmail.com",
+  phone: "440-610-7584",
+  phoneHours: ["Calls Monday–Friday, 9am–6pm", "Texts anytime", "Email anytime"],
   resume: "/David-Solt-Resume.pdf",
+  references: "/David-Solt-References.pdf",
   summary:
     "U.S. Army veteran and certified HTML/CSS web designer. I spent nearly four years keeping communication systems running, supporting users and leading soldiers, and I now build for the web with HTML, CSS and JavaScript. I install, configure and troubleshoot hardware, networks and radio systems, and I take responsibility for the equipment and people in my care.",
 };
@@ -100,11 +103,13 @@ export const certifications = [
     title: "Professional JavaScript Course",
     org: "ERA Solutions",
     date: "November 2025",
+    file: "/certifications/professional-javascript-course.pdf",
   },
   {
     title: "Certified HTML/CSS Web Designer",
     org: "Coalition of Information Technology Businesses (COITB)",
     date: "October 2025",
+    file: "/certifications/certified-html-css-web-designer.pdf",
   },
 ];
 export const education = [
@@ -135,9 +140,27 @@ export const education = [
 ];
 
 export const references = [
-  { name: "Frank Guizar", title: "USARPAC G6 Project Officer", org: "U.S. Army" },
-  { name: "Edward Cruz", title: "Senior Info Tech Specialist", org: "U.S. Army" },
-  { name: "Joshua Pace", title: "Team Leader / Supervisor", org: "U.S. Army" },
+  {
+    name: "Frank Guizar",
+    title: "USARPAC G6 Project Officer",
+    org: "U.S. Army",
+    phone: "(619) 315-4311",
+    email: "frank.r.guizar.mil@army.mil",
+  },
+  {
+    name: "Edward Cruz",
+    title: "Senior Info Tech Specialist",
+    org: "U.S. Army",
+    phone: "(803) 458-6996",
+    email: "edward.e.cruz3.mil@army.mil",
+  },
+  {
+    name: "Joshua Pace",
+    title: "Team Leader / Supervisor",
+    org: "U.S. Army",
+    phone: "(915) 740-3288",
+    email: undefined as string | undefined,
+  },
 ];
 export const activities = [
   "Completed Army BCT and AIT for MOS 25U (Signal Support Systems Specialist)",

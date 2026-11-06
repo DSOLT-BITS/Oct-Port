@@ -3,19 +3,44 @@ import { profile } from "@/data/resume";
 import Section from "./Section";
 
 export default function Contact() {
+  const compose = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(profile.email)}`;
+
   return (
     <Section id="contact" eyebrow="06 / Contact" title="Let's talk." tone="ink">
+      <Reveal className="-mt-8 mb-12 flex items-center gap-3">
+        <span aria-hidden className="h-1.5 w-1.5 shrink-0 rounded-full bg-signal" />
+        <p className="font-mono text-sm tracking-widest text-muted uppercase">
+          Based in {profile.location}
+        </p>
+      </Reveal>
       <Reveal>
         <a
-          href={`mailto:${profile.email}`}
+          href={compose}
+          target="_blank"
+          rel="noreferrer"
           className="focus-ring break-all text-3xl font-medium tracking-tight underline decoration-signal decoration-2 underline-offset-8 transition-opacity duration-200 hover:opacity-80 sm:text-5xl"
         >
           {profile.email}
         </a>
+        <p className="mt-6">
+          <a
+            href={`tel:+1${profile.phone.replace(/\D/g, "")}`}
+            className="focus-ring text-xl font-medium tracking-tight underline decoration-signal decoration-2 underline-offset-8 transition-opacity duration-200 hover:opacity-80 sm:text-2xl"
+          >
+            {profile.phone}
+          </a>
+        </p>
+        <div className="mt-2 space-y-1 font-mono text-sm text-muted">
+          {profile.phoneHours.map((line) => (
+            <p key={line}>{line}</p>
+          ))}
+        </div>
       </Reveal>
       <Reveal delay={100} className="mt-10 flex flex-wrap gap-3">
         <a
-          href={`mailto:${profile.email}`}
+          href={compose}
+          target="_blank"
+          rel="noreferrer"
           className="focus-ring press rounded-md bg-accent px-6 py-3 text-sm font-medium text-white transition-[transform,opacity] duration-150 hover:opacity-90"
         >
           Send an email
@@ -26,6 +51,13 @@ export default function Contact() {
           className="focus-ring press rounded-md border border-raised px-6 py-3 text-sm font-medium transition-[transform,background-color] duration-150 hover:bg-card"
         >
           Download resume
+        </a>
+        <a
+          href={profile.references}
+          download
+          className="focus-ring press rounded-md border border-raised px-6 py-3 text-sm font-medium transition-[transform,background-color] duration-150 hover:bg-card"
+        >
+          Download references
         </a>
       </Reveal>
       <Reveal delay={200}>

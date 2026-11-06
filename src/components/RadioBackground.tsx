@@ -40,7 +40,7 @@ export default function RadioBackground() {
       period: number,
       maxR: number,
     ) => {
-      const count = 6;
+      const count = 8;
       for (let i = 0; i < count; i++) {
         const phase = (t / period + i / count) % 1;
         const r = phase * maxR;
@@ -59,26 +59,37 @@ export default function RadioBackground() {
 
     const carrier = (t: number) => {
       const y0 = h * 0.82;
+      const yAt = (x: number) =>
+        y0 +
+        Math.sin(x / 38 - t / 500 - scrollY / 120) *
+          22 *
+          (0.5 + 0.5 * Math.sin(x / 260 + t / 2500)) +
+        Math.sin(x / 95 + t / 850) * 9;
+
       ctx.beginPath();
       for (let x = 0; x <= w; x += 6) {
-        const envelope = 0.5 + 0.5 * Math.sin(x / 260 + t / 4000);
-        const y =
-          y0 +
-          Math.sin(x / 38 - t / 700 - scrollY / 120) * 14 * envelope +
-          Math.sin(x / 95 + t / 1400) * 6;
+        const y = yAt(x);
         if (x === 0) ctx.moveTo(x, y);
         else ctx.lineTo(x, y);
       }
-      ctx.strokeStyle = `rgba(${AMBER}, 0.14)`;
+      ctx.strokeStyle = `rgba(${AMBER}, 0.16)`;
       ctx.lineWidth = 1.25;
       ctx.stroke();
+
+      for (let i = 0; i < 3; i++) {
+        const x = (t / 10 + (i * w) / 3) % w;
+        ctx.beginPath();
+        ctx.arc(x, yAt(x), 2.2, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${AMBER}, 0.45)`;
+        ctx.fill();
+      }
     };
 
     const draw = (t: number) => {
       ctx.clearRect(0, 0, w, h);
       const maxR = Math.hypot(w, h) * 0.7;
-      rings(w * 0.88, h * 0.18, BLUE, t, 14000, maxR);
-      rings(w * 0.08, h * 0.9, AMBER, t, 18000, maxR * 0.8);
+      rings(w * 0.88, h * 0.18, BLUE, t, 10000, maxR);
+      rings(w * 0.08, h * 0.9, AMBER, t, 13000, maxR * 0.8);
       carrier(t);
     };
 

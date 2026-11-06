@@ -1,21 +1,21 @@
 # Site Spec
 
 ## Overview
-Single-page personal portfolio for David Solt, built from `src/assets/David Solt Resume 2026.pdf`. Content lives in `src/data/resume.ts`.
+Single-page personal portfolio for David Solt, built from `src/assets/David Solt Resume 2026.pdf`. Content lives in `src/data/resume.ts`. Certification cards embed their PDF files from `public/certifications/` inline (lazy-loaded, revealed on scroll).
 
 ## Stack
 - Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS 4. No other runtime dependencies.
 - Fonts: Geist and Geist Mono.
 
 ## Sections
-Hero, About, Experience, Skills, Education, References (names and titles only), Contact.
+Hero, About, Experience, Skills, Education, References (click a card to reveal contact info), Contact.
 
 ## Motion
 - Blocks: `Reveal` (fade + 28px rise on scroll into view).
 - Headings: `WordReveal` (words rise out of a clipped line).
 - Body text: `ScrollText` (words fade in as the text scrolls through the viewport).
 - Hero: `Parallax` initials, header scroll-progress bar.
-- Background: `RadioBackground` canvas, with radio waves rippling from two antennas (blue, amber) and a carrier wave that shifts with scroll. Low opacity, paused when the tab is hidden, static under reduced motion.
+- Background: `RadioBackground` canvas, with faster radio waves rippling from two antennas (blue, amber), a more animated carrier wave, and traveling signal markers. Low opacity, paused when the tab is hidden, static under reduced motion.
 - Ease-out custom curve `cubic-bezier(0.23,1,0.32,1)`; transform/opacity only; all motion disabled under `prefers-reduced-motion`.
 
 ## Color Palette (VS Code dark theme)
@@ -38,4 +38,3 @@ Hero, About, Experience, Skills, Education, References (names and titles only), 
 
 ## Deployment
 - Target: Vercel, build command `npm run build`. No environment variables required.
-

@@ -1,5 +1,6 @@
 import Reveal from "@/components/motion/Reveal";
 import { certifications, education } from "@/data/resume";
+import CertificatePreview from "./CertificatePreview";
 import Section from "./Section";
 
 export default function Education() {
@@ -15,6 +16,7 @@ export default function Education() {
               <h4 className="text-lg font-medium">{c.title}</h4>
               <p className="mt-1 text-sm text-muted">{c.org}</p>
               <p className="mt-4 font-mono text-sm text-signal">{c.date}</p>
+              <CertificatePreview file={c.file} title={c.title} />
             </div>
           </Reveal>
         ))}
