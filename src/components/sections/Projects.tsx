@@ -6,17 +6,12 @@ export default function Projects() {
   return (
     <Section id="projects" eyebrow="04 / Projects" title="What I've built.">
       <div className="grid gap-6 md:grid-cols-2">
-        {projects.map((project, i) => (
-          <Reveal key={project.title} delay={i * 100}>
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="lift group relative flex h-full flex-col rounded-xl bg-card p-7 transition-all duration-200"
-            >
+        {projects.map((project, i) => {
+          const card = (
+            <>
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <h3 className="text-xl font-semibold group-hover:text-accent transition-colors">
+                  <h3 className={`text-xl font-semibold transition-colors ${project.link ? "group-hover:text-accent" : ""}`}>
                     {project.title}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted">
@@ -41,15 +36,37 @@ export default function Projects() {
                 ))}
               </div>
 
-              <div className="mt-auto pt-6">
-                <span className="inline-flex items-center gap-2 text-sm font-medium text-signal group-hover:gap-3 transition-[gap]">
-                  View project
-                  <span aria-hidden>→</span>
-                </span>
-              </div>
-            </a>
-          </Reveal>
-        ))}
+              {project.link && (
+                <div className="mt-auto pt-6">
+                  <span className="inline-flex items-center gap-2 text-sm font-medium text-signal transition-[gap] group-hover:gap-3">
+                    View project
+                    <span aria-hidden>→</span>
+                  </span>
+                </div>
+              )}
+            </>
+          );
+          const cardClassName = `relative flex h-full flex-col rounded-xl bg-card p-7 transition-all duration-200 ${
+            project.link ? "lift group" : ""
+          }`;
+
+          return (
+            <Reveal key={project.title} delay={i * 100}>
+              {project.link ? (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cardClassName}
+                >
+                  {card}
+                </a>
+              ) : (
+                <div className={cardClassName}>{card}</div>
+              )}
+            </Reveal>
+          );
+        })}
       </div>
     </Section>
   );

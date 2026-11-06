@@ -180,10 +180,10 @@ export const projects = [
     featured: true,
   },
   {
-    title: "Portfolio Website",
-    description: "Full-stack portfolio site with responsive design, smooth animations, and PDF document integration.",
-    technologies: ["HTML5", "CSS3", "JavaScript", "React"],
-    link: "#",
+    title: "Live Portfolio Website",
+    description: "The live portfolio showcasing my experience, skills, certifications, and references.",
+    technologies: ["Next.js", "TypeScript", "React", "Tailwind CSS"],
+    link: "/",
     featured: true,
   },
 ];
