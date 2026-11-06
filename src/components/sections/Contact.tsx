@@ -1,10 +1,9 @@
 import Reveal from "@/components/motion/Reveal";
 import { profile } from "@/data/resume";
 import Section from "./Section";
+import EmailMenu from "./EmailMenu";
 
 export default function Contact() {
-  const compose = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(profile.email)}`;
-
   return (
     <Section id="contact" eyebrow="06 / Contact" title="Let's talk." tone="ink">
       <Reveal className="-mt-8 mb-12 flex items-center gap-3">
@@ -14,14 +13,7 @@ export default function Contact() {
         </p>
       </Reveal>
       <Reveal className="flex flex-wrap gap-3">
-        <a
-          href={compose}
-          target="_blank"
-          rel="noreferrer"
-          className="focus-ring press rounded-md bg-accent px-6 py-3 text-sm font-medium text-white transition-[transform,opacity] duration-150 hover:opacity-90"
-        >
-          Send an email
-        </a>
+        <EmailMenu email={profile.email} />
         <a
           href={profile.resume}
           download
