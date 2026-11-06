@@ -16,6 +16,22 @@ export default function Contact() {
         <EmailMenu email={profile.email} />
         <a
           href={profile.resume}
+          target="_blank"
+          rel="noreferrer"
+          className="focus-ring press rounded-md border border-raised px-6 py-3 text-sm font-medium transition-[transform,background-color] duration-150 hover:bg-card"
+        >
+          View resume
+        </a>
+        <a
+          href={profile.references}
+          target="_blank"
+          rel="noreferrer"
+          className="focus-ring press rounded-md border border-raised px-6 py-3 text-sm font-medium transition-[transform,background-color] duration-150 hover:bg-card"
+        >
+          View references
+        </a>
+        <a
+          href={profile.resume}
           download
           className="focus-ring press rounded-md border border-raised px-6 py-3 text-sm font-medium transition-[transform,background-color] duration-150 hover:bg-card"
         >
