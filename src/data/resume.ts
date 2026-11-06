@@ -68,30 +68,35 @@ export const experience = [
 export const skills = [
   {
     group: "Web Development",
-    items: ["HTML, CSS & JavaScript", "Certified HTML/CSS Web Designer", "Professional JavaScript Course"],
+    items: [
+      "Front-end development with HTML5, CSS3 and JavaScript",
+      "Certified HTML/CSS Web Designer (COITB)",
+      "Professional JavaScript certification (ERA Solutions)",
+    ],
   },
   {
     group: "IT & Networking",
     items: [
-      "Hardware installation & troubleshooting",
-      "Windows OS configuration",
-      "Small business network design",
-      "IT help desk support",
+      "Hardware installation, configuration and troubleshooting",
+      "Windows operating system setup and configuration",
+      "Small business network design and support",
+      "Help desk support and technical issue resolution",
     ],
   },
   {
     group: "Radio & RF",
     items: [
-      "Radio system maintenance (RF, VHF, UHF, HF)",
-      "Antenna setup & maintenance",
+      "Radio communication system maintenance across RF, VHF, UHF and HF",
+      "Antenna installation, setup and maintenance",
+      "Vehicle radio kit installation and radio operator training",
     ],
   },
   {
     group: "Leadership",
     items: [
-      "Team leadership & management",
-      "Responsible for $2 million worth of equipment with zero issues for over 2 years",
-      "Effective teamwork in diverse environments",
+      "Team leadership and personnel management",
+      "Accountable for $2M in equipment with zero losses over 2+ years",
+      "Collaboration across diverse, mission-driven teams",
     ],
   },
 ];
