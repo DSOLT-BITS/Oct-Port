@@ -1,5 +1,6 @@
 import "@/styles/tailwind.css";
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/Header";
 import RadioBackground from "@/components/RadioBackground";
@@ -27,6 +28,7 @@ export default function RootLayout({
         <RadioBackground />
         <Header />
         {children}
+        <Analytics />
       </body>
     </html>
   );
