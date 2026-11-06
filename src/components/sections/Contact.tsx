@@ -59,18 +59,7 @@ export default function Contact() {
           <p>
             © {new Date().getFullYear()} {profile.name} · {profile.location}
           </p>
-          <nav aria-label="Footer" className="flex flex-wrap gap-x-5 gap-y-2">
-            {profile.links.map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                target="_blank"
-                rel="noreferrer"
-                className="focus-ring transition-colors duration-200 hover:text-fg"
-              >
-                {l.label}
-              </a>
-            ))}
+          <nav aria-label="Footer">
             <a
               href="#top"
               className="focus-ring transition-colors duration-200 hover:text-fg"

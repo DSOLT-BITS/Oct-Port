@@ -14,7 +14,7 @@ export const profile = {
   ],
   references: "/David-Solt-References.pdf",
   summary:
-    "U.S. Army veteran and certified HTML/CSS web designer. I spent nearly four years keeping communication systems running, supporting users and leading soldiers, and I now build for the web with HTML, CSS and JavaScript. I install, configure and troubleshoot hardware, networks and radio systems, and I take responsibility for the equipment and people in my care.",
+    "I’m a U.S. Army veteran and certified web designer who enjoys solving practical problems, whether that means building for the web or helping someone get their technology working again. In the Army, I spent nearly four years maintaining communication systems, supporting users, and leading soldiers. I bring that same steady, hands-on approach to my work today, along with experience in web development, IT support, hardware, networking, and radio systems.",
 };
 
 export const stats = [
@@ -61,16 +61,6 @@ export const experience = [
       "Implemented new software and hardware solutions.",
     ],
   },
-  {
-    title: "Landscaping",
-    org: "Various Locations",
-    place: "Ohio",
-    period: "June 2018 – September 2019",
-    points: [
-      "Provided landscaping services including lawn maintenance and gardening.",
-      "Worked under different supervisors, gaining experience in outdoor labor and teamwork.",
-    ],
-  },
 ];
 
 export const skills: Array<{
@@ -80,37 +70,39 @@ export const skills: Array<{
   {
     group: "Web Development",
     items: [
-      { name: "HTML5 & CSS3", level: "expert" },
-      { name: "JavaScript & TypeScript", level: "intermediate" },
+      { name: "HTML & CSS", level: "expert" },
+      { name: "JavaScript", level: "intermediate" },
+      { name: "TypeScript", level: "intermediate" },
       { name: "React & Next.js", level: "intermediate" },
       { name: "Responsive Design", level: "expert" },
     ],
   },
   {
-    group: "IT & Networking",
+    group: "IT Support & Troubleshooting",
     items: [
       { name: "Hardware Installation & Troubleshooting", level: "expert" },
-      { name: "Windows System Administration", level: "expert" },
-      { name: "Network Design & Support", level: "intermediate" },
-      { name: "Help Desk Support", level: "expert" },
+      { name: "Windows OS Configuration", level: "expert" },
+      { name: "IT Help Desk Support", level: "expert" },
+      { name: "Diagnostic Troubleshooting", level: "expert" },
     ],
   },
   {
-    group: "Radio & RF Systems",
+    group: "Networking & Communications",
     items: [
-      { name: "Radio Communication Systems", level: "expert" },
-      { name: "Antenna Installation & Maintenance", level: "expert" },
-      { name: "RF VHF/UHF/HF Systems", level: "expert" },
-      { name: "Radio Operator Training", level: "expert" },
+      { name: "Small Business Network Design", level: "intermediate" },
+      { name: "Radio System Maintenance (RF, VHF, UHF, HF)", level: "expert" },
+      { name: "Antenna Setup & Maintenance", level: "expert" },
+      { name: "Secure Communications (COMSEC)", level: "expert" },
     ],
   },
   {
-    group: "Leadership & Management",
+    group: "Operations & Leadership",
     items: [
-      { name: "Team Leadership", level: "expert" },
-      { name: "Equipment Accountability", level: "expert" },
-      { name: "Personnel Training", level: "expert" },
-      { name: "Mission-Critical Operations", level: "expert" },
+      { name: "Team Leadership & Management", level: "expert" },
+      { name: "Inventory & Asset Management", level: "expert" },
+      { name: "Technical Training & Instruction", level: "expert" },
+      { name: "Customer Service & Relations", level: "intermediate" },
+      { name: "E-commerce Operations", level: "intermediate" },
     ],
   },
 ];

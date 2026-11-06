@@ -40,7 +40,16 @@ export default function CertificatePreview({
 
   return (
     <>
-      <div className="relative mt-5">
+      <a
+        href={file}
+        target="_blank"
+        rel="noreferrer"
+        className="focus-ring press mt-5 flex items-center justify-between rounded-lg border border-raised bg-panel px-4 py-4 text-sm font-medium sm:hidden"
+      >
+        <span>{title}</span>
+        <span className="text-signal">Open certificate PDF ↗</span>
+      </a>
+      <div className="relative mt-5 hidden sm:block">
         <iframe
           src={`${file}#toolbar=0&navpanes=0&view=Fit`}
           title={`${title} certificate`}
@@ -63,17 +72,17 @@ export default function CertificatePreview({
           aria-modal="true"
           aria-label={`${title} certificate`}
           onClick={close}
-          className={`fixed inset-0 z-[60] flex items-center justify-center bg-ink/85 p-4 backdrop-blur-sm transition-opacity duration-[250ms] ease-out motion-reduce:transition-none sm:p-8 ${
+          className={`fixed inset-0 z-[60] flex items-center justify-center bg-ink/85 p-0 backdrop-blur-sm transition-opacity duration-[250ms] ease-out motion-reduce:transition-none sm:p-8 ${
             shown ? "opacity-100" : "opacity-0"
           }`}
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className={`flex h-full w-full max-w-5xl flex-col overflow-hidden rounded-xl border border-raised bg-card transition-[transform,opacity] duration-[250ms] ease-out-strong motion-reduce:transition-none ${
+            className={`flex h-[100dvh] w-full max-w-5xl flex-col overflow-hidden border-raised bg-card transition-[transform,opacity] duration-[250ms] ease-out-strong motion-reduce:transition-none sm:h-full sm:rounded-xl sm:border ${
               shown ? "scale-100 opacity-100" : "scale-95 opacity-0"
             }`}
           >
-            <div className="flex items-center justify-between gap-4 border-b border-raised px-5 py-3">
+            <div className="flex items-center justify-between gap-4 border-b border-raised px-4 py-3 sm:px-5">
               <h4 className="truncate text-sm font-medium">{title}</h4>
               <button
                 type="button"
