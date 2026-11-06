@@ -27,6 +27,9 @@ export default function Hero() {
           <p className="mb-6 font-mono text-sm text-muted">
             <span className="mr-3 inline-block h-2 w-2 rounded-full bg-signal align-middle" />
             {profile.location}
+            <span className="ml-4 rounded-md border border-raised px-2.5 py-1 text-xs text-fg">
+              U.S. Army Veteran
+            </span>
           </p>
         </Reveal>
 
@@ -48,15 +51,15 @@ export default function Hero() {
         <Reveal delay={350} className="mt-10 flex flex-wrap gap-3">
           <a
             href="#contact"
-            className="focus-ring press rounded-md bg-accent px-6 py-3 text-sm font-medium text-white transition-[transform,opacity] duration-150 hover:opacity-90"
+            className="focus-ring press rounded-md bg-accent px-8 py-3 text-sm font-medium text-white transition-[transform,opacity] duration-150 hover:opacity-90 shadow-lg shadow-accent/30"
           >
-            Get in touch
+            Get in touch →
           </a>
           <a
             href={profile.resume}
             target="_blank"
             rel="noopener noreferrer"
-            className="focus-ring press rounded-md border border-raised px-6 py-3 text-sm font-medium transition-[transform,background-color] duration-150 hover:bg-card"
+            className="focus-ring press rounded-md border border-raised px-8 py-3 text-sm font-medium transition-[transform,background-color] duration-150 hover:bg-card"
           >
             View resume
           </a>

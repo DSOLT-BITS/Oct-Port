@@ -4,6 +4,14 @@ export const profile = {
   location: "Cleveland, Ohio",
   email: "David.solt@gmail.com",
   resume: "/David-Solt-Resume.pdf",
+  seeking:
+    "Open to web development and IT roles in the Cleveland, Ohio area and remote.",
+  links: [
+    { label: "GitHub", href: "https://github.com/DSOLT-BITS" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/david-solt-117a5a274" },
+    { label: "ClearanceJobs", href: "https://www.clearancejobs.com/profile" },
+    { label: "Indeed", href: "https://profile.indeed.com/?hl=en_US&co=US&from=gnav-homepage" },
+  ],
   references: "/David-Solt-References.pdf",
   summary:
     "U.S. Army veteran and certified HTML/CSS web designer. I spent nearly four years keeping communication systems running, supporting users and leading soldiers, and I now build for the web with HTML, CSS and JavaScript. I install, configure and troubleshoot hardware, networks and radio systems, and I take responsibility for the equipment and people in my care.",
@@ -65,38 +73,44 @@ export const experience = [
   },
 ];
 
-export const skills = [
+export const skills: Array<{
+  group: string;
+  items: Array<{ name: string; level: "expert" | "intermediate" | "beginner" }>;
+}> = [
   {
     group: "Web Development",
     items: [
-      "Front-end development with HTML5, CSS3 and JavaScript",
-      "Certified HTML/CSS Web Designer (COITB)",
-      "Professional JavaScript certification (ERA Solutions)",
+      { name: "HTML5 & CSS3", level: "expert" },
+      { name: "JavaScript & TypeScript", level: "intermediate" },
+      { name: "React & Next.js", level: "intermediate" },
+      { name: "Responsive Design", level: "expert" },
     ],
   },
   {
     group: "IT & Networking",
     items: [
-      "Hardware installation, configuration and troubleshooting",
-      "Windows operating system setup and configuration",
-      "Small business network design and support",
-      "Help desk support and technical issue resolution",
+      { name: "Hardware Installation & Troubleshooting", level: "expert" },
+      { name: "Windows System Administration", level: "expert" },
+      { name: "Network Design & Support", level: "intermediate" },
+      { name: "Help Desk Support", level: "expert" },
     ],
   },
   {
-    group: "Radio & RF",
+    group: "Radio & RF Systems",
     items: [
-      "Radio communication system maintenance across RF, VHF, UHF and HF",
-      "Antenna installation, setup and maintenance",
-      "Vehicle radio kit installation and radio operator training",
+      { name: "Radio Communication Systems", level: "expert" },
+      { name: "Antenna Installation & Maintenance", level: "expert" },
+      { name: "RF VHF/UHF/HF Systems", level: "expert" },
+      { name: "Radio Operator Training", level: "expert" },
     ],
   },
   {
-    group: "Leadership",
+    group: "Leadership & Management",
     items: [
-      "Team leadership and personnel management",
-      "Accountable for $2M in equipment with zero losses over 2+ years",
-      "Collaboration across diverse, mission-driven teams",
+      { name: "Team Leadership", level: "expert" },
+      { name: "Equipment Accountability", level: "expert" },
+      { name: "Personnel Training", level: "expert" },
+      { name: "Mission-Critical Operations", level: "expert" },
     ],
   },
 ];
@@ -165,6 +179,23 @@ export const references = [
     email: undefined as string | undefined,
   },
 ];
+export const projects = [
+  {
+    title: "AI Tool Portfolio Site",
+    description: "Professional portfolio website built with Next.js and TypeScript showcasing experience, skills, and credentials.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React"],
+    link: "https://github.com/DSOLT-BITS/Oct-Port",
+    featured: true,
+  },
+  {
+    title: "Portfolio Website",
+    description: "Full-stack portfolio site with responsive design, smooth animations, and PDF document integration.",
+    technologies: ["HTML5", "CSS3", "JavaScript", "React"],
+    link: "#",
+    featured: true,
+  },
+];
+
 export const activities = [
   "Completed Army BCT and AIT for MOS 25U (Signal Support Systems Specialist)",
   "Ambassador, People to People Ambassadors Program",
@@ -179,6 +210,7 @@ export const sections = [
   { id: "about", label: "About" },
   { id: "experience", label: "Experience" },
   { id: "skills", label: "Skills" },
+  { id: "projects", label: "Projects" },
   { id: "education", label: "Education" },
   { id: "references", label: "References" },
   { id: "contact", label: "Contact" },

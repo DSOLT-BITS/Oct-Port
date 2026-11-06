@@ -2,15 +2,43 @@
 
 import { useId, useState } from "react";
 
+type SkillItem = string | { name: string; level: "beginner" | "intermediate" | "expert" };
+
 export default function SkillCard({
   group,
   items,
 }: {
   group: string;
-  items: string[];
+  items: SkillItem[];
 }) {
   const [open, setOpen] = useState(false);
   const panelId = useId();
+
+  const getLevelColor = (level?: string) => {
+    switch (level) {
+      case "expert":
+        return "bg-signal";
+      case "intermediate":
+        return "bg-accent";
+      case "beginner":
+        return "bg-raised";
+      default:
+        return "bg-signal";
+    }
+  };
+
+  const getLevelLabel = (level?: string) => {
+    switch (level) {
+      case "expert":
+        return "Expert";
+      case "intermediate":
+        return "Intermediate";
+      case "beginner":
+        return "Beginner";
+      default:
+        return "";
+    }
+  };
 
   return (
     <div className="lift h-full rounded-xl bg-card">
@@ -43,16 +71,33 @@ export default function SkillCard({
         }`}
       >
         <div className="overflow-hidden" inert={!open}>
-          <ul className="space-y-3 border-t border-raised px-7 pt-5 pb-7 text-sm leading-relaxed text-muted">
-            {items.map((item) => (
-              <li key={item} className="flex gap-3">
-                <span
-                  aria-hidden
-                  className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-signal"
-                />
-                {item}
-              </li>
-            ))}
+          <ul className="space-y-3 border-t border-raised px-7 pt-5 pb-7 text-sm">
+            {items.map((item) => {
+              const isObject = typeof item === "object";
+              const name = isObject ? item.name : item;
+              const level = isObject ? item.level : undefined;
+
+              return (
+                <li key={name} className="flex items-center justify-between gap-3">
+                  <span className="flex items-center gap-3">
+                    <span
+                      aria-hidden
+                      className="h-1.5 w-1.5 shrink-0 rounded-full bg-signal"
+                    />
+                    <span className="text-muted">{name}</span>
+                  </span>
+                  {level && (
+                    <span
+                      className={`ml-2 inline-block rounded px-2 py-1 font-mono text-xs font-medium text-ink ${getLevelColor(
+                        level,
+                      )}`}
+                    >
+                      {getLevelLabel(level)}
+                    </span>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>

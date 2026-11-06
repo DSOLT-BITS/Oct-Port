@@ -5,7 +5,7 @@ import ReferenceCard from "./ReferenceCard";
 
 export default function References() {
   return (
-    <Section id="references" eyebrow="05 / References" title="People who can vouch." tone="panel">
+    <Section id="references" eyebrow="06 / References" title="People who can vouch." tone="panel">
       <div className="grid gap-4 md:grid-cols-3">
         {references.map((r, i) => (
           <Reveal key={r.name} delay={i * 100}>
