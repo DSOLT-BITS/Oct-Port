@@ -16,11 +16,15 @@ export default function About() {
           Activities, honors &amp; community
         </h3>
       </Reveal>
-      <ul className="grid gap-3 sm:grid-cols-2">
+      <ul className="grid gap-x-10 sm:grid-cols-2">
         {activities.map((a, i) => (
           <Reveal as="li" key={a} delay={(i % 2) * 80}>
-            <div className="lift h-full rounded-lg bg-card p-5 text-sm leading-relaxed">
-              {a}
+            <div className="flex items-start gap-3 border-b border-raised/70 py-4 text-sm leading-relaxed">
+              <span
+                aria-hidden="true"
+                className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-signal"
+              />
+              <span className="whitespace-pre-line">{a}</span>
             </div>
           </Reveal>
         ))}

@@ -109,6 +109,12 @@ export const skills: Array<{
 
 export const certifications = [
   {
+    title: "Certified ReactJS Framework Developer",
+    org: "Coalition of Information Technology Businesses (COITB)",
+    date: "November 2026",
+    file: "/certifications/certified-reactjs-framework-developer.pdf",
+  },
+  {
     title: "Professional JavaScript Course",
     org: "ERA Solutions",
     date: "November 2025",
@@ -189,13 +195,13 @@ export const projects = [
 ];
 
 export const activities = [
-  "Completed Army BCT and AIT for MOS 25U (Signal Support Systems Specialist)",
-  "Ambassador, People to People Ambassadors Program",
-  "Ambassador, Ohana Motorsports Foundation",
-  "Member, Boy Scouts of America",
-  "Volunteer, Lorain County Fair",
-  "Member, Keystone Schools Choir",
-  "Participant, Keystone High School Tech Team",
+  "Completed Army BCT and AIT for MOS 25U\n(Signal Support Systems Specialist)",
+  "Ambassador - People to People Ambassadors Program",
+  "Ambassador - Ohana Motorsports Foundation",
+  "Member - Boy Scouts of America",
+  "Volunteer - Lorain County Fair",
+  "Member - Keystone Schools Choir",
+  "Participant - Keystone High School Tech Team",
 ];
 
 export const sections = [
