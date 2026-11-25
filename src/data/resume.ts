@@ -179,6 +179,13 @@ export const references = [
 ];
 export const projects = [
   {
+    title: "ERA Commerce",
+    description: "Company store application built for ERA Academy with a React frontend and an Express backend.",
+    technologies: ["React", "Vite", "Tailwind CSS", "Express"],
+    link: "https://github.com/DSOLT-BITS/ERA-Commerce-Week3",
+    featured: false,
+  },
+  {
     title: "AI Tool Portfolio Site",
     description: "Professional portfolio website built with Next.js and TypeScript showcasing experience, skills, and credentials.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React"],
